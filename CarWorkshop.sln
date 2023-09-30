@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshop.MVC", "CarWorkshop.MVC\CarWorkshop.MVC.csproj", "{336B9958-5022-4845-A3B5-A9D578CAA3FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshop.Domain", "CarWorkshop.Domain\CarWorkshop.Domain.csproj", "{37F3B92D-6F22-4A0B-A43D-9E6E5DB88E84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshop.Domain", "CarWorkshop.Domain\CarWorkshop.Domain.csproj", "{37F3B92D-6F22-4A0B-A43D-9E6E5DB88E84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshop.Aplication", "CarWorkshop.Aplication\CarWorkshop.Aplication.csproj", "{04194B2B-7EBD-4EC5-9D5C-783F0D97BD1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshop.Aplication", "CarWorkshop.Aplication\CarWorkshop.Aplication.csproj", "{04194B2B-7EBD-4EC5-9D5C-783F0D97BD1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorskop.Infrastructure", "CarWorskop.Infrastructure\CarWorskop.Infrastructure.csproj", "{86B3AD94-2D0B-4004-8380-60CD09FB1EB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorskop.Infrastructure", "CarWorskop.Infrastructure\CarWorskop.Infrastructure.csproj", "{86B3AD94-2D0B-4004-8380-60CD09FB1EB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23F09752-93E3-4EEF-8226-10EA881002DA}
 	EndGlobalSection
 EndGlobal

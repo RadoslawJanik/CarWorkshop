@@ -2,6 +2,7 @@ using CarWorskop.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using CarWorskop.Infrastructure.Extensions;
 using CarWorskop.Infrastructure.Seeders;
+using CarWorkshop.Aplication.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddInfrastructure(builder.Configuration);
+
+builder.Services.AddApplication();
 
 
 

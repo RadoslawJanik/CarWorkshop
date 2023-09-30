@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CarWorskop.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initMigration : Migration
+    public partial class initmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,6 +24,7 @@ namespace CarWorskop.Infrastructure.Migrations
                     ContactDetails_Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ContactDetails_City = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ContactDetails_PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    About = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EncodedName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
