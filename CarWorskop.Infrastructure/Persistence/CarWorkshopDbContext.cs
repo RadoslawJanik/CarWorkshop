@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarWorskop.Infrastructure.Persistence
 {
-    public class CarWorkshopDbContext : DbContext
+    public class CarWorkshopDbContext :IdentityDbContext
             
        
     {
@@ -15,6 +16,10 @@ namespace CarWorskop.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<CarWorkshop.Domain.Entities.CarWorkshop>()
 
                 .OwnsOne(c => c.ContactDetails);

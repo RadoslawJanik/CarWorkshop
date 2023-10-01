@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshop.MVC", "CarWorks
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshop.Domain", "CarWorkshop.Domain\CarWorkshop.Domain.csproj", "{37F3B92D-6F22-4A0B-A43D-9E6E5DB88E84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshop.Aplication", "CarWorkshop.Aplication\CarWorkshop.Aplication.csproj", "{04194B2B-7EBD-4EC5-9D5C-783F0D97BD1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshop.Application", "CarWorkshop.Aplication\CarWorkshop.Application.csproj", "{04194B2B-7EBD-4EC5-9D5C-783F0D97BD1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorskop.Infrastructure", "CarWorskop.Infrastructure\CarWorskop.Infrastructure.csproj", "{86B3AD94-2D0B-4004-8380-60CD09FB1EB4}"
 EndProject
