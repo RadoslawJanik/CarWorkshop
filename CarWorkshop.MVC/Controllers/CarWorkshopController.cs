@@ -8,6 +8,10 @@ using CarWorkshop.Application.CarWorkshop.Queries.GetCarWorkshopByEncodedName;
 using AutoMapper;
 using CarWorkshop.Aplication.CarWorkshop.Commands.EditCarWorkshop.CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop;
 using Microsoft.AspNetCore.Authorization;
+using CarWorkshop.MVC.Extensions;
+using CarWorkshop.Application.CarWorskshopService.Commands;
+using CarWorkshop.Application.CarWorskshopService.Query;
+using Newtonsoft.Json;
 
 namespace CarWorkshop.MVC.Controllers
 {
@@ -80,7 +84,36 @@ namespace CarWorkshop.MVC.Controllers
 
             }
             await _mediator.Send(command);
+
+            this.SetNotification("success", $"Created carworkshop: {command.Name}");
+
             return RedirectToAction(nameof(Index));
+        }
+
+
+
+        [HttpPost]
+        [Authorize(Roles = "Owner")]
+        [Route("CarWorkshop/CarWorkshopService")]
+        public async Task<IActionResult> CreateCarWorkshopService(CreateCarWorkshopServiceCommand command)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+
+            }
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
+
+        [HttpGet]
+        [Route("CarWorkshop/{encodedName}/CarWorkshopService")]
+        public async Task<IActionResult> GetCarWorkshopServices(string encodedName)
+        {
+            var data = await _mediator.Send(new GetCarWorkshopServicesQuery() { EncodedName = encodedName });
+            return Ok(data);
         }
     }
     }
