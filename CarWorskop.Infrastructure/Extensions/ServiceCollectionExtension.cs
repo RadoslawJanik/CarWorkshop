@@ -1,4 +1,5 @@
-﻿using CarWorkshop.Domain.Interfaces;
+﻿using CarWorkshop.Application.ApplicationUser;
+using CarWorkshop.Domain.Interfaces;
 using CarWorskop.Infrastructure.Persistence;
 using CarWorskop.Infrastructure.Repositories;
 using CarWorskop.Infrastructure.Seeders;
@@ -21,7 +22,7 @@ namespace CarWorskop.Infrastructure.Extensions
             services.AddDbContext<CarWorkshopDbContext>(options => options.UseSqlServer(
                 configuration.GetConnectionString("CarWorkshop")));
 
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
              .AddEntityFrameworkStores<CarWorkshopDbContext>();
 
@@ -29,6 +30,12 @@ namespace CarWorskop.Infrastructure.Extensions
 
             services.AddScoped<ICarWorkshopRepository, CarWorkshopRepository>();
             services.AddScoped<ICarWorkshopServiceRepository, CarWorkshopServiceRepository>();
+
+         
+
+
+
+
         }
     }
 }

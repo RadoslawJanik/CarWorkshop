@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CarWorkshop.Application.ApplicationUser
 {
-    public class CurrentUser
+    public class CurrentUser: IdentityUser
     {
-        public CurrentUser(string id, string email, IEnumerable<string> roles)
+        public CurrentUser(string id , string email, IEnumerable<string> roles)
         {
             Id = id;
             Email = email;

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using CarWorskop.Infrastructure.Extensions;
 using CarWorskop.Infrastructure.Seeders;
 using CarWorkshop.Aplication.Extensions;
+using CarWorskop.Infrastructure.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,15 +14,20 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddApplication();
 
-
-
 var app = builder.Build();
 
- var scope = app.Services.CreateScope();
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
 
-var seeder = scope.ServiceProvider.GetRequiredService<CarWorkshopSeeder>();
+    var seeder = serviceProvider.GetRequiredService<CarWorkshopSeeder>();
 
-await seeder.Seed();
+ 
+
+    // Call the Seed method
+    await seeder.Seed();
+}
+
 
 
 

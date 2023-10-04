@@ -1,4 +1,7 @@
-﻿using CarWorskop.Infrastructure.Persistence;
+﻿using CarWorkshop.Application.ApplicationUser;
+using CarWorskop.Infrastructure.Persistence;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +14,21 @@ namespace CarWorskop.Infrastructure.Seeders
     {
         private readonly CarWorkshopDbContext _dbContext;
 
+
+
         public CarWorkshopSeeder(CarWorkshopDbContext dbContext)
         {
             _dbContext = dbContext;
         }
+     
 
-        public async Task Seed()
+
+
+                public async Task Seed()
         {
             if (await _dbContext.Database.CanConnectAsync())
             {
+
                 if (!_dbContext.CarWorkshops.Any())
                 {
                     var mazdaAso = new CarWorkshop.Domain.Entities.CarWorkshop()
@@ -39,6 +48,7 @@ namespace CarWorskop.Infrastructure.Seeders
                     _dbContext.CarWorkshops.Add(mazdaAso);
                     await _dbContext.SaveChangesAsync();
                 }
+            
             }
         }
     }

@@ -22,6 +22,8 @@ namespace CarWorkshop.Aplication.Extensions
             services.AddScoped<IUserContext, UserContext>();
             services.AddMediatR(typeof(CreateCarWorkshopCommand));
 
+           
+
             services.AddScoped(provider => new MapperConfiguration(cfg =>
             {
                 var scope = provider.CreateScope();
@@ -34,6 +36,9 @@ namespace CarWorkshop.Aplication.Extensions
             services.AddValidatorsFromAssemblyContaining<CreateCarWorkshopCommandValidator>()
                    .AddFluentValidationAutoValidation()
                    .AddFluentValidationClientsideAdapters();
+
+
+
         }
     }
 }

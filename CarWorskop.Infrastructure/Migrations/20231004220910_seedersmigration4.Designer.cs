@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarWorskop.Infrastructure.Migrations
 {
     [DbContext(typeof(CarWorkshopDbContext))]
-    [Migration("20231002114204_Services")]
-    partial class Services
+    [Migration("20231004220910_seedersmigration4")]
+    partial class seedersmigration4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,6 +111,20 @@ namespace CarWorskop.Infrastructure.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Moderator",
+                            NormalizedName = "MODERATOR"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "Owner",
+                            NormalizedName = "OWNER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -201,6 +215,40 @@ namespace CarWorskop.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f60a08e0-14d1-4c21-ac80-5e264fd1a66b",
+                            Email = "Moderator@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MODERATOR@EXAMPLE.COM",
+                            NormalizedUserName = "MODERATOR@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHR1DeJaWCYbox8qZDL5buhVLr+cQZEonLgb/Lc7PJL5gWBvwb4VVlNVB4V6GZKAhg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "31aa9ae4-d40f-415b-a76a-3df21f4eda32",
+                            TwoFactorEnabled = false,
+                            UserName = "moderator@example.com"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "07a0186f-427f-455b-8fb3-7f241eb91f86",
+                            Email = "owner@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "OWNER@EXAMPLE.COM",
+                            NormalizedUserName = "OWNER@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOU9q+EVKR7da2pLrFV111biUvnjxJkTx2MHZ2JdustDi39fkRFWQHj3kgy35QFLpQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "1ebe3600-3069-4ae2-8f0a-e6360f91be14",
+                            TwoFactorEnabled = false,
+                            UserName = "owner@example.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -265,6 +313,18 @@ namespace CarWorskop.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "1",
+                            RoleId = "1"
+                        },
+                        new
+                        {
+                            UserId = "2",
+                            RoleId = "2"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

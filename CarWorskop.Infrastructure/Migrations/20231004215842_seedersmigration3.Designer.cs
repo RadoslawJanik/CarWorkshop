@@ -4,6 +4,7 @@ using CarWorskop.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarWorskop.Infrastructure.Migrations
 {
     [DbContext(typeof(CarWorkshopDbContext))]
-    partial class CarWorkshopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231004215842_seedersmigration3")]
+    partial class seedersmigration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -218,15 +221,15 @@ namespace CarWorskop.Infrastructure.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f60a08e0-14d1-4c21-ac80-5e264fd1a66b",
+                            ConcurrencyStamp = "f3eed938-dd7b-4d7f-82b4-77d3e4fb4336",
                             Email = "Moderator@example.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MODERATOR@EXAMPLE.COM",
                             NormalizedUserName = "MODERATOR@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHR1DeJaWCYbox8qZDL5buhVLr+cQZEonLgb/Lc7PJL5gWBvwb4VVlNVB4V6GZKAhg==",
+                            PasswordHash = "Test5%",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "31aa9ae4-d40f-415b-a76a-3df21f4eda32",
+                            SecurityStamp = "e18c215d-5d61-46e7-8246-32f1734e006f",
                             TwoFactorEnabled = false,
                             UserName = "moderator@example.com"
                         },
@@ -234,15 +237,15 @@ namespace CarWorskop.Infrastructure.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "07a0186f-427f-455b-8fb3-7f241eb91f86",
+                            ConcurrencyStamp = "835aa190-1e44-4560-a5f1-4fc68d0c162b",
                             Email = "owner@example.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "OWNER@EXAMPLE.COM",
                             NormalizedUserName = "OWNER@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOU9q+EVKR7da2pLrFV111biUvnjxJkTx2MHZ2JdustDi39fkRFWQHj3kgy35QFLpQ==",
+                            PasswordHash = "Test5%",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1ebe3600-3069-4ae2-8f0a-e6360f91be14",
+                            SecurityStamp = "9f1aa150-2f2c-4e00-b855-5aceeb35b16d",
                             TwoFactorEnabled = false,
                             UserName = "owner@example.com"
                         });
